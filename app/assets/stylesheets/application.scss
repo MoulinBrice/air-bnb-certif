@@ -9,4 +9,14 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/flat_card";
+@import "components/flat_details";
+@import "components/reza";
 @import "pages/index";
+
+
+.container_box{
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+}

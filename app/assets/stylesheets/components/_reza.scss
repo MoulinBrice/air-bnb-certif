@@ -1,0 +1,32 @@
+.reza__box{
+    width: 330px;
+    height: 325px;
+    border: 2px solid lightgrey;
+    box-shadow: 10px 10px 10px black;
+}
+.info__flat--details{
+    width: 100%;
+    display: flex;
+}
+.info__flat_details--info , .info__flat_details--reza{
+    width: 50%;
+}
+.reza__box{
+    padding: 10px 10px;
+    border-radius: 20px;
+}
+.reza__box p{
+    font-size: 1.5rem;
+}
+.reza__box--btn{
+    display: flex;
+    justify-content: center;
+}
+.reza__box--btn_submit{
+    background-color: blueviolet;
+    font-weight: bold;
+    color:white;
+    border-style: none !important;
+    border-radius: 20px;
+    padding: 10px 10px;
+}

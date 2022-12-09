@@ -1,0 +1,11 @@
+<div class="reza__box">
+    <p><strong><%= @flat.price_per_night %> €</strong> par nuit</p>
+    <div class="reza__box--dates">
+        <%= simple_form_for(@booking) do |f| %>
+            <%= f.input :start_date %>
+            <%= f.input :end_date %>
+            <div class="reza__box--btn"><%= f.submit class: "reza__box--btn_submit" %></div>
+
+        <% end %>
+    </div>
+</div>

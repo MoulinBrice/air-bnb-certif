@@ -1,0 +1,16 @@
+<div class="master__card">
+    <% @flats.each do |flat| %>
+        <div class="flat__card">
+            <a href="<%= flat_path(flat.id) %>">
+                <div class="flat__card--info">
+                    <img class="flat__card--img" src="<%= flat.url_photo_flat %>" alt="image de l'appartement" width=300 height=300>
+                    <h3><%= flat.name %></h3>
+                    <p><%= flat.address %><br>
+                        <strong><%= flat.price_per_night %>€</strong> par nuit
+                    </p>
+                </div>
+            </a>
+        </div>
+        <% end %>
+</div>
+

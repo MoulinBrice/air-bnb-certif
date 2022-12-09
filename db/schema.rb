@@ -10,9 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_08_145657) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_09_165813) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.string "review"
+    t.bigint "user_id", null: false
+    t.bigint "flat_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "start_date"
+    t.date "end_date"
+    t.index ["flat_id"], name: "index_bookings_on_flat_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "flats", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "description"
+    t.string "price_per_night"
+    t.integer "number_of_guests"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "url_photo_flat"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "comment"
+    t.bigint "flat_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "rating"
+    t.index ["flat_id"], name: "index_reviews_on_flat_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +54,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_145657) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "flats"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "reviews", "flats"
 end
