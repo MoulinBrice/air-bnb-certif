@@ -9,38 +9,15 @@
                 <p>Info sur l'appartement</p>
                 <hr>
                 <p><%= @flat.description %></p>
-
             </div>
             <div class="info__flat_details--reza">
                 <%= render "shared/reservation" %>
             </div>
-
         </div>
 
+        <div class="info__flat--review">
+            
 
-
-
-
-    </div>
-
-
-
-    <div class="info_appartement">
-    <h1><%=@flat.name%></h1>
-    <p><%=@flat.address%></p>
-    <p><%=@flat.description%></p>
-    <p><%=@flat.price_per_night%></p>
-    <p><%=@flat.number_of_guests%></p>
-    <%= link_to "Reserver", root_path %>
-    <%= link_to "Ajouter un commentaire", root_path %>
-    </div>
-
-    <div class="reservation">
-       <%= simple_form_for([@flat, @booking]) do |f| %>
-            <%= f.input :start_date %>
-            <%= f.input :end_date %>
-            <%= f.input :review %>
-            <%= f.submit %>
-        <% end %>
+        </div>
     </div>
 </div>

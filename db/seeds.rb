@@ -14,7 +14,6 @@ flat = Flat.new(name: "Appartement 2",
   price_per_night: 400,
   number_of_guests: 4,
   url_photo_flat: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-
 )
 flat.save!
 
